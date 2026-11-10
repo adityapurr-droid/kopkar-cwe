@@ -1,0 +1,22 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    
+    /* Softer emerald - muted green palette cocok dengan background putih */
+    --color-emerald-50: oklch(97.5% 0.015 155);
+    --color-emerald-100: oklch(95% 0.025 155);
+    --color-emerald-200: oklch(90% 0.04 155);
+    --color-emerald-300: oklch(82% 0.06 155);
+    --color-emerald-400: oklch(72% 0.08 155);
+    --color-emerald-500: oklch(62% 0.09 155);
+    --color-emerald-600: oklch(52% 0.09 155);
+    --color-emerald-700: oklch(42% 0.08 155);
+    --color-emerald-800: oklch(32% 0.06 155);
+    --color-emerald-900: oklch(24% 0.045 155);
+    --color-emerald-950: oklch(16% 0.03 155);
+}
