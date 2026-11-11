@@ -3,6 +3,7 @@
 namespace App\Exports;
 
 use App\Models\PayrollPeriod;
+use Illuminate\Support\Enumerable;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithHeadings;
@@ -13,7 +14,7 @@ class PayrollPeriodExport implements FromCollection, ShouldAutoSize, WithHeading
 {
     public function __construct(public PayrollPeriod $period) {}
 
-    public function collection()
+    public function collection(): Enumerable
     {
         return $this->period->deductions()
             ->with(['member.division', 'member.position'])

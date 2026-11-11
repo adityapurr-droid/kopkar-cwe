@@ -3,6 +3,7 @@
 namespace App\Exports;
 
 use App\Models\Loan;
+use Illuminate\Support\Enumerable;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithHeadings;
@@ -11,7 +12,7 @@ use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 
 class LoansSummaryExport implements FromCollection, ShouldAutoSize, WithHeadings, WithStyles
 {
-    public function collection()
+    public function collection(): Enumerable
     {
         return Loan::with(['member.division', 'member.position'])
             ->whereIn('status', ['berjalan', 'disetujui'])

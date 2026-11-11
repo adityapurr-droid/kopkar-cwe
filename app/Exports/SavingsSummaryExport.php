@@ -3,6 +3,7 @@
 namespace App\Exports;
 
 use App\Models\Member;
+use Illuminate\Support\Enumerable;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithHeadings;
@@ -11,7 +12,7 @@ use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 
 class SavingsSummaryExport implements FromCollection, ShouldAutoSize, WithHeadings, WithStyles
 {
-    public function collection()
+    public function collection(): Enumerable
     {
         return Member::with(['division', 'position'])
             ->where('status_keanggotaan', 'aktif')
